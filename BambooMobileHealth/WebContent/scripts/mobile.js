@@ -1,1 +1,0 @@
-document.getElementById("header").innerHTML="Bamboo Mobile Health";

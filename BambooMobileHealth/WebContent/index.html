@@ -10,49 +10,38 @@
 	<!-- Page setup -->
 	<head>
 		<meta charset="UTF-8"><!-- html5 character set -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><!-- Mobile web scaling -->
 		<title>Bamboo Mobile Health</title>
 		<link rel="stylesheet" type="text/css" href="./stylesheets/mobile.css">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.2/jquery.mobile.min.js"></script>
+		<script type="text/javascript" src="./scripts/location.js"></script>
+		<script type="text/javascript" src="./scripts/weather.js"></script>
 	</head>
 	<!-- Page content -->
 	<!-- Primary page section -->
 	<body>
-		<section>
+		<section id="wrapper">
 			<!-- Page logo -->
-			<header id="header"></header>
-			<!-- Profile picture -->
-			<figure>
-				<figcaption>Jesse Couch Profile Picture</figcaption>
-			</figure>
+			<header id="header">Bamboo Mobile Health</header>
 			<!-- Personal information -->
-			<section>
-				<p>Student, NCSU</p>
-				<p>Aerospace Engineering, Undergraduate</p>
-				<p>Computer Science, Undergraduate</p>
-			</section>
-			<!-- Navigation section -->
-			<section>
-				<h4>Online presence</h4>
-				<nav>
-					<ul>
-						<li><a href="http://www4.ncsu.edu/~jccouch/">Personal Website</a></li>
-						<li><a href="https://www.facebook.com/jesse.couch1">Facebook</a></li>
-						<li><a href="https://plus.google.com/u/0/107271135936503964855/posts/p/pub">Google+</a></li>
-						<li><a href="http://www.linkedin.com/profile/view?id=137367286&amp;trk=nav_responsive_tab_profile">Linked In</a></li>
-					</ul>
-				</nav>
+			<section id="form">
+				<p id="location"></p>
+				<p id="weather"></p>
+				<form>
+					<section id="input">
+						<input value="User Name" onclick="this.value='';"/><br/>
+					</section>
+					<button onclick="getWeather(gps)">View Weather</button>
+				</form>
 			</section>
 		</section>
 		<!-- Page footer section -->
-		<hr>
 		<footer>
-			<p>&copy; 2014 Jesse Couch</p>
-			<!-- Author contact information -->
-			<address>
-				You can contact me at <a href="mailto:jccouch@ncsu.edu">jccouch@ncsu.edu</a>
-			</address>
-			<p><a href="http://validator.w3.org/nu/">W3 Validator</a></p>
+			<!-- Company picture -->
+			<figure>
+				
+			</figure>
 		</footer>
 	</body>
-	<!-- Insert javascript here or the page elements do not exist yet -->
-	<script type="text/javascript" src="./scripts/mobile.js"></script>
 </html>
