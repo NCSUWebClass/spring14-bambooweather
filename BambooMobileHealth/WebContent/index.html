@@ -31,18 +31,23 @@
 				<p id="weather"></p>
 				<form>
 					<section id="input">
-						<input value="User Name" onclick="this.value='';"/><br/>
+						<input value="User Name" id="userNameText" onclick="this.value='';"/><br/>
 					</section>
 					<button onclick="getWeather(gps)">View Weather</button>
 				</form>
 			</section>
 		</section>
+		
+		<p></p>
+		
 		<script>
 		function myFunction() {
+		var userName = document.getElementById("userNameText").value;
+		echo userName;
 		var margin = {top: 20, right: 20, bottom: 30, left: 40},
 		width = 960 - margin.left - margin.right,
 		height = 500 - margin.top - margin.bottom;
-		 
+		
 		var x = d3.time.scale()
 		.range([0, width]);
 		 
@@ -86,7 +91,6 @@
 			});
 		};
 		</script>
-		//
 		<button onclick="myFunction()">View Graph</button>
 		<!-- Page footer section -->
 		<footer>
