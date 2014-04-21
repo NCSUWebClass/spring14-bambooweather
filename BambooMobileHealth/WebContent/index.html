@@ -13,8 +13,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><!-- Mobile web scaling -->
 		<title>Bamboo Mobile Health</title>
 		<link rel="stylesheet" type="text/css" href="./stylesheets/mobile.css">
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-		<script src="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.2/jquery.mobile.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.2/jquery.mobile.min.js"></script>
 		<script type="text/javascript" src="./scripts/location.js"></script>
 		<script type="text/javascript" src="./scripts/weather.js"></script>
 		<script src="http://d3js.org/d3.v2.js?2.9.6"></script>
@@ -41,9 +41,9 @@
 		<p></p>
 		
 		<script>
-		function myFunction() {
+		function viewStress() {
 		var userName = document.getElementById("userNameText").value;
-		echo userName;
+		alert(userName);
 		var margin = {top: 20, right: 20, bottom: 30, left: 40},
 		width = 960 - margin.left - margin.right,
 		height = 500 - margin.top - margin.bottom;
@@ -60,16 +60,17 @@
 			.append("g")
 			.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 			 
-		d3.csv("patientinfo.csv", function(data) {
+		d3.csv(userName + ".csv", function(data) {
 		var parseDate = d3.time.format("%d-%m-%y").parse;
 			// Coerce the strings to numbers.
 		data.forEach(function(d) {
 			d.date = parseDate(d.date);
-			d.value = +d.value;
+			d.fatigue = +d.fatigue;
+			d.stress = +d.stress;
 		});
 		
 		x.domain(d3.extent(data, function(d) { return d.date; })).nice();
-		y.domain(d3.extent(data, function(d) { return d.value; })).nice();	
+		y.domain(d3.extent(data, function(d) { return d.stress; })).nice();	
 		
 		 svg.append("g")
 			.attr("class", "x axis")
@@ -87,11 +88,64 @@
 			.enter().append("path")
 			.attr("class", "point")
 			.attr("d", d3.svg.symbol().type("triangle-up"))
-			.attr("transform", function(d) { return "translate(" + x(d.date) + "," + y(d.value) + ")"; });
+			.attr("transform", function(d) { return "translate(" + x(d.date) + "," + y(d.stress) + ")"; });
+			});
+		};
+		
+		function viewFatigue() {
+		var userName = document.getElementById("userNameText").value;
+		alert(userName);
+		var margin = {top: 20, right: 20, bottom: 30, left: 40},
+		width = 960 - margin.left - margin.right,
+		height = 500 - margin.top - margin.bottom;
+		
+		var x = d3.time.scale()
+		.range([0, width]);
+		 
+		var y = d3.scale.linear()
+		.range([height, 0]);
+		
+		var svg = d3.select("body").append("svg")
+			.attr("width", width + margin.left + margin.right)
+			.attr("height", height + margin.top + margin.bottom)
+			.append("g")
+			.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+			 
+		d3.csv(userName + ".csv", function(data) {
+		var parseDate = d3.time.format("%d-%m-%y").parse;
+			// Coerce the strings to numbers.
+		data.forEach(function(d) {
+			d.date = parseDate(d.date);
+			d.fatigue = +d.fatigue;
+			d.stress = +d.stress;
+		});
+		
+		x.domain(d3.extent(data, function(d) { return d.date; })).nice();
+		y.domain(d3.extent(data, function(d) { return d.fatigue; })).nice();	
+		
+		 svg.append("g")
+			.attr("class", "x axis")
+			.attr("transform", "translate(0," + height + ")")
+			.call(d3.svg.axis().scale(x).orient("bottom"));
+			 
+		// Add the y-axis.
+		svg.append("g")
+			.attr("class", "y axis")
+			.call(d3.svg.axis().scale(y).orient("left"));
+			 
+		// Add the points!
+		svg.selectAll(".point")
+			.data(data)
+			.enter().append("path")
+			.attr("class", "point")
+			.attr("d", d3.svg.symbol().type("triangle-up"))
+			.attr("transform", function(d) { return "translate(" + x(d.date) + "," + y(d.fatigue) + ")"; });
 			});
 		};
 		</script>
-		<button onclick="myFunction()">View Graph</button>
+		<button onclick="viewFatigue()">View Fatigue Graph</button>
+		<button onclick="viewStress()">View Stress Graph</button>
+		
 		<!-- Page footer section -->
 		<footer>
 			<!-- Company picture -->
