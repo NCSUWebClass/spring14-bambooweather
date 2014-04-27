@@ -13,6 +13,7 @@
 		<title>Bamboo Mobile Health</title>
 		<link rel="stylesheet" type="text/css" href="./stylesheets/mobile.css">
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script type="text/javascript" src="./scripts/location.js"></script>
 		<script type="text/javascript" src="./scripts/weather.js"></script>
 		<script type="text/javascript" src="./scripts/plotting.js"></script>
@@ -30,8 +31,9 @@
 				<p id="location"></p>
 				<p id="weather"></p>
 				<section id="input">
-					<input value="User Name" id="userNameText" onclick="this.value='';"/><br/>
+					<input value="User Name" id="userNameText" class="inputField" onclick="this.value='';"/><br/>
 				</section>
+				<br/>
 				<button class="weatherBut" onclick="getWeather(gps)">View Weather</button>
 				<button class="fatigueBut" onclick="viewFatigue()">View Fatigue Graph</button>
 				<button class="stressBut" onclick="viewStress()">View Stress Graph</button>

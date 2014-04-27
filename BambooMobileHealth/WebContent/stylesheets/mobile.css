@@ -4,14 +4,13 @@
 body{
 }
 #headerBam{
-	color:green;
 	font-size:30px;
 }
 #headerMo{
-	color:green;
 	font-size:30px;
 }
 .logo{
+	color:#b8e356;
 	font-family: "Arial";
 }
 
@@ -20,8 +19,19 @@ button {
     border: none !important;
 }
 
-.input {
-	border: none;
+.inputField {
+	-webkit-border-top-left-radius:2px;
+	-moz-border-radius-topleft:2px;
+	border-top-left-radius:2px;
+	-webkit-border-top-right-radius:2px;
+	-moz-border-radius-topright:2px;
+	border-top-right-radius:2px;
+	-webkit-border-bottom-right-radius:2px;
+	-moz-border-radius-bottomright:2px;
+	border-bottom-right-radius:2px;
+	-webkit-border-bottom-left-radius:2px;
+	-moz-border-radius-bottomleft:2px;
+	border-bottom-left-radius:2px;
 }
 
 textarea {

@@ -7,7 +7,7 @@ function getLocation()
 		navigator.geolocation.getCurrentPosition(showPosition, error);
 	}
 	else{
-		$('#input').append("<input value=\"Zip Code\" onclick=\"this.value=\'\';\"/><br/>");
+		$('#input').append("<input class=\"inputField\" value=\"Zip Code\" onclick=\"this.value=\'\';\"/><br/>");
 	}
 }
 
@@ -17,5 +17,5 @@ function showPosition(position)
 }
 
 function error(err) {
-	$('#input').append("<input value=\"Zip Code\" onclick=\"this.value=\'\';\"/><br/>");
+	$('#input').append("<input class=\"inputField\" value=\"Zip Code\" onclick=\"this.value=\'\';\"/><br/>");
 };
