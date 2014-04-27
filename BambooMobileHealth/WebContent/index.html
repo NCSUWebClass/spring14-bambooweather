@@ -13,8 +13,6 @@
 		<title>Bamboo Mobile Health</title>
 		<link rel="stylesheet" type="text/css" href="./stylesheets/mobile.css">
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.2/jquery.mobile.min.js"></script>
 		<script type="text/javascript" src="./scripts/location.js"></script>
 		<script type="text/javascript" src="./scripts/weather.js"></script>
 		<script type="text/javascript" src="./scripts/plotting.js"></script>
@@ -31,17 +29,14 @@
 			<section id="form">
 				<p id="location"></p>
 				<p id="weather"></p>
-				<form>
-					<section id="input">
-						<input value="User Name" id="userNameText" onclick="this.value='';"/><br/>
-					</section>
-					<button class="weatherBut" onclick="getWeather(gps)">View Weather</button>
-					<button class="fatigueBut" onclick="viewFatigue()">View Fatigue Graph</button>
-					<button class="stressBut" onclick="viewStress()">View Stress Graph</button>
-				</form>
-				<image src="images/bamboo.jpg"></image>
+				<section id="input">
+					<input value="User Name" id="userNameText" onclick="this.value='';"/><br/>
+				</section>
+				<button class="weatherBut" onclick="getWeather(gps)">View Weather</button>
+				<button class="fatigueBut" onclick="viewFatigue()">View Fatigue Graph</button>
+				<button class="stressBut" onclick="viewStress()">View Stress Graph</button>
 			</section>
+			<image src="images/bamboo.jpg"></image>
 		</section>		
-
 	</body>
 </html>
