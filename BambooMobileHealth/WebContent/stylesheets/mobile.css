@@ -11,6 +11,10 @@ body{
 	color:green;
 	font-size:30px;
 }
+.logo{
+	font-family: "Arial";
+}
+
 button {
     background: transparent;
     border: none !important;
