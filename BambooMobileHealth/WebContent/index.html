@@ -1,4 +1,3 @@
-
 <!doctype html><!-- html5 doctype -->
 <!-- Begin html5 page -->
 <!-- 
@@ -25,7 +24,8 @@
 	<body>
 		<section id="wrapper">
 			<!-- Page logo -->
-			<header id="header">Bamboo Mobile Health</header>
+			<header id="headerBam">Bamboo </header>
+			<header id="headerMo">Mobile Health</header>
 			<!-- Personal information -->
 			<section id="form">
 				<p id="location"></p>
@@ -34,7 +34,7 @@
 					<section id="input">
 						<input value="User Name" id="userNameText" onclick="this.value='';"/><br/>
 					</section>
-					<button onclick="getWeather(gps)">View Weather</button>
+					<button class="weatherBut" onclick="getWeather(gps)">View Weather</button>
 				</form>
 			</section>
 		</section>		
@@ -143,7 +143,7 @@
 			});		
 		};
 		</script>
-		<button onclick="viewFatigue()">View Fatigue Graph</button>
-		<button onclick="viewStress()">View Stress Graph</button>
+		<button class="fatigueBut" onclick="viewFatigue()">View Fatigue Graph</button>
+		<button class="stressBut" onclick="viewStress()">View Stress Graph</button>
 	</body>
 </html>
