@@ -1,0 +1,50 @@
+<!doctype html><!-- html5 doctype -->
+<!-- Begin html5 page -->
+<!-- 
+	BambooMobileHealth Team 1
+	CSC342 - 001
+	Spring 2014
+-->
+<html>
+	<!-- Page setup -->
+	<head>
+		<meta charset="UTF-8"><!-- html5 character set -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><!-- Mobile web scaling -->
+		<title>Bamboo Mobile Health</title>
+		<link rel="shortcut icon" href="http://static.wixstatic.com/ficons/6ea6c0_45d8a22df20c7a8ee34359924c34937b_fi.ico" type="image/png"/>
+		<link rel="stylesheet" type="text/css" href="./stylesheets/mobile.css">
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script type="text/javascript" src="./scripts/location.js"></script>
+		<script type="text/javascript" src="./scripts/weather.js"></script>
+		<script type="text/javascript" src="./scripts/plotting.js"></script>
+		<script type="text/javascript" src="./scripts/fancy.js"></script>
+		<script src="http://d3js.org/d3.v2.js?2.9.6"></script>
+	</head>
+	<!-- Page content -->
+	<!-- Primary page section -->
+	<body>
+		<section id="wrapper">
+			<p></p>
+			<!-- Page logo -->
+			<header class="logo hide" id="headerBam">Bamboo </header>
+			<header class="logo hide" id="headerMo">Mobile Health</header>
+			<!-- Personal information -->
+			<section id="form">
+				<section class="hide" id="input">
+					<input value="User Name" id="userNameText" class="inputField" onclick="this.value='';"/><br/>
+				</section>
+				<br/>
+				<!--<button class="weatherBut" onclick="getCityState(gps)">View Weather</button>-->
+				<button class="fatigueBut" onclick="viewFatigue()">View Fatigue Graph</button>
+				<button class="stressBut" onclick="viewStress()">View Stress Graph</button>
+			</section>
+			<image class="hide del" src="images/bamboo.jpg"></image>
+		</section>		
+	</body>
+	<script>
+	$( document ).ready(function() {
+	    getLocation();
+	});
+	</script>
+</html>
