@@ -4,7 +4,7 @@ var state = '';
 var maxtemps = new Array();
 var mintemps = new Array();
 var dates = new Array();
-var numdays = 7;
+var numdays = 2;
 var hasWeather = 0;
 
 // Function that saves the city and state globally from a Wunderground API call 
