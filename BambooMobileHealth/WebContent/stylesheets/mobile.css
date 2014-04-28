@@ -14,6 +14,18 @@ body{
 	font-family: "Arial";
 }
 
+.highline {
+  fill: none;
+  stroke: red;
+  stroke-width: 1.5px;
+}
+
+.lowline {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
 button {
     background: transparent;
     border: none !important;
