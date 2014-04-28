@@ -18,20 +18,20 @@
 		<script type="text/javascript" src="./scripts/location.js"></script>
 		<script type="text/javascript" src="./scripts/weather.js"></script>
 		<script type="text/javascript" src="./scripts/plotting.js"></script>
+		<script type="text/javascript" src="./scripts/fancy.js"></script>
 		<script src="http://d3js.org/d3.v2.js?2.9.6"></script>
 	</head>
 	<!-- Page content -->
 	<!-- Primary page section -->
 	<body>
 		<section id="wrapper">
+			<p></p>
 			<!-- Page logo -->
-			<header class="logo" id="headerBam">Bamboo </header>
-			<header class="logo" id="headerMo">Mobile Health</header>
+			<header class="logo hide" id="headerBam">Bamboo </header>
+			<header class="logo hide" id="headerMo">Mobile Health</header>
 			<!-- Personal information -->
 			<section id="form">
-				<p id="location"></p>
-				<p id="weather"></p>
-				<section id="input">
+				<section class="hide" id="input">
 					<input value="User Name" id="userNameText" class="inputField" onclick="this.value='';"/><br/>
 				</section>
 				<br/>
@@ -39,7 +39,7 @@
 				<button class="fatigueBut" onclick="viewFatigue()">View Fatigue Graph</button>
 				<button class="stressBut" onclick="viewStress()">View Stress Graph</button>
 			</section>
-			<image src="images/bamboo.jpg"></image>
+			<image class="hide del" src="images/bamboo.jpg"></image>
 		</section>		
 	</body>
 	<script>

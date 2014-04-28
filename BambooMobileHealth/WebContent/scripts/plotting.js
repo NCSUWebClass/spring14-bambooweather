@@ -1,10 +1,12 @@
 function viewStress() {
+//getCityState(gps);
+hideThings();
 var s = d3.selectAll("svg");
 s = s.remove();
 var userName = document.getElementById("userNameText").value;
-var margin = {top: 150, right: 40, bottom: 150, left: 40},
-width = 960 - margin.left - margin.right,
-height = 500 - margin.top - margin.bottom;
+var margin = {top: 7, right: 45, bottom: 22, left: 45},
+width = 550 - margin.left - margin.right,
+height = 190 - margin.top - margin.bottom;
 
 var highs = [50, 60, 70, 80];
 var lows = [20, 30, 40, 50];
@@ -18,7 +20,7 @@ var y = d3.scale.linear()
 var y2 = d3.scale.linear()
 .range([height, 0]);
 
-var svg = d3.select("body").append("svg")
+var svg = d3.select("p").append("svg")
 	.attr("width", width + margin.left + margin.right)
 	.attr("height", height + margin.top + margin.bottom)
 	.append("g")
@@ -108,12 +110,14 @@ svg.append("path")
 };
 
 function viewFatigue() {
+//getCityState(gps);
+hideThings();
 var s = d3.selectAll("svg");
 s = s.remove();		
 var userName = document.getElementById("userNameText").value;
-var margin = {top: 150, right: 40, bottom: 150, left: 40},
-width = 960 - margin.left - margin.right,
-height = 500 - margin.top - margin.bottom;
+var margin = {top: 7, right: 45, bottom: 22, left: 45},
+width = 550 - margin.left - margin.right,
+height = 190 - margin.top - margin.bottom;
 
 var highs = [50, 60, 70, 80];
 var lows = [20, 30, 40, 50];
@@ -127,7 +131,7 @@ var y = d3.scale.linear()
 var y2 = d3.scale.linear()
 .range([height, 0]);
 
-var svg = d3.select("body").append("svg")
+var svg = d3.select("p").append("svg")
 	.attr("width", width + margin.left + margin.right)
 	.attr("height", height + margin.top + margin.bottom)
 	.append("g")

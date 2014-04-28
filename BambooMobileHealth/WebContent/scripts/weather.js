@@ -4,7 +4,8 @@ var state = '';
 var maxtemps = new Array();
 var mintemps = new Array();
 var dates = new Array();
-var numdays = 2;
+var datesUgly = new Array();
+var numdays = 3;
 var hasWeather = 0;
 
 // Function that saves the city and state globally from a Wunderground API call 
@@ -53,6 +54,7 @@ function getWeather(){
 			var mm = getMonth(curday); //January is 0!
 			var yyyy = curday.getFullYear();
 			url = 'http://api.wunderground.com/api/77a956bf764dc788/history_' + yyyy + mm + dd + '/q/' + state + '/' + city + '.json';
+			//$('#wrapper').append(url);
 			//url =  'http://api.wunderground.com/api/77a956bf764dc788/history_20140427/q/NC/Raleigh.json';
 			$.ajax({
 			  url : url,
@@ -61,6 +63,7 @@ function getWeather(){
 				  mintemps.push(parsed_json['history']['dailysummary'][0]['mintempi']);
 				  maxtemps.push(parsed_json['history']['dailysummary'][0]['maxtempi']);
 				  dates.push(parsed_json['history']['date']['pretty']);
+				  datesUgly.push("" + parsed_json['history']['date']['mon'] + "-" + parsed_json['history']['date']['mday'] + "-" + parsed_json['history']['date']['year'].substring(2,4) );
 				  printWeather();
 			  },
 			  async : false
@@ -75,7 +78,7 @@ function printWeather(){
 		hasWeather = 1;
 		//alert('done, length: ' + mintemps.length);
 		for(var i = 0; i < numdays; i++){
-			alert(i + ': On: ' + dates[i] + ' min: ' + mintemps[i] + ' max: ' + maxtemps[i]);
+			alert(i + ': On: ' + dates[i] + ' min: ' + mintemps[i] + ' max: ' + maxtemps[i] + ' ' + datesUgly[i]);
 		}
 	}
 }
