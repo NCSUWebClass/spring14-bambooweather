@@ -40,13 +40,38 @@ svg.append("g")
 	.attr("class", "y axis")
 	.call(d3.svg.axis().scale(y).ticks(5).orient("left"));
 	 
+
+svg.append("text")
+.attr("class", "y label")
+.attr("text-anchor", "end")
+.attr("y", -35)
+.attr("x", -60)
+.attr("dy", ".5em")
+.attr("transform", "rotate(-90)")
+.text("Stress")
+.attr("font-family", "sans-serif")
+.attr("font-size", "20px")
+.attr("fill",d3.rgb("grey").darker());
+
+svg.append("text")
+.attr("class", "x label")
+.attr("text-anchor", "end")
+.attr("x", width / 2)
+.attr("y", height + 40)
+.text("Date (M/D/Y)")
+.attr("font-family", "sans-serif")
+.attr("font-size", "20px")
+.attr("fill",d3.rgb("grey").darker());
+ 
+
 // Add the points!
 svg.selectAll(".point")
 	.data(data)
 	.enter().append("path")
 	.attr("class", "point")
 	.attr("d", d3.svg.symbol().type("triangle-up"))
-	.attr("transform", function(d) { return "translate(" + x(d.date) + "," + y(d.stress) + ")"; });
+	.attr("transform", function(d) { return "translate(" + x(d.date) + "," + y(d.stress) + ")"; })
+	.attr("fill",d3.rgb("green"));
 	});
 };
 
@@ -91,13 +116,37 @@ y.domain([0,5]);
 svg.append("g")
 	.attr("class", "y axis")
 	.call(d3.svg.axis().scale(y).orient("left").ticks(5));
+
+svg.append("text")
+	.attr("class", "y label")
+	.attr("text-anchor", "end")
+	.attr("y", -35)
+	.attr("x", -60)
+	.attr("dy", ".5em")
+	.attr("transform", "rotate(-90)")
+	.text("Fatigue")
+	.attr("font-family", "sans-serif")
+	.attr("font-size", "20px")
+	.attr("fill",d3.rgb("grey").darker());
+
+svg.append("text")
+	.attr("class", "x label")
+	.attr("text-anchor", "end")
+	.attr("x", width / 2)
+	.attr("y", height + 40)
+	.text("Date (M/D/Y)")
+	.attr("font-family", "sans-serif")
+	.attr("font-size", "20px")
+	.attr("fill",d3.rgb("grey").darker());
 	 
 // Add the points!
 svg.selectAll(".point")
 	.data(data)
 	.enter().append("path")
 	.attr("class", "point")
-	.attr("d", d3.svg.symbol().type("triangle-up"))
-	.attr("transform", function(d) { return "translate(" + x(d.date) + "," + y(d.fatigue) + ")"; });
+	.attr("d", d3.svg.symbol().type("circle"))
+	.attr("transform", function(d) { return "translate(" + x(d.date) + "," + y(d.fatigue) + ")"; })
+	.attr("fill",d3.rgb("green"));
+    
 	});		
 };
